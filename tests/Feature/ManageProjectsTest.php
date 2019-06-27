@@ -27,6 +27,7 @@ class ManageProjectsTest extends TestCase
     {
         $this->withoutExceptionHandling();
         $this->actingAs(factory('App\User')->create());
+        #$this->signIn();
 
         $this->get('/projects/create')->assertStatus(200);
 

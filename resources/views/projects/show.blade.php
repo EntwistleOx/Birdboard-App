@@ -28,7 +28,7 @@
                     <textarea class="card w-full min-h-150 ">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime eum officia labore optio aperiam modi eos, ad cum voluptates voluptas, repudiandae dicta sit magnam quibusdam quis aliquid officiis velit in.</textarea>
                 </div>
             </div>
-            <div class="lg:w-1/4 px-3">
+            <div class="lg:w-1/4 px-3 mt-10">
                 @include('projects.card')
             </div>
         </div>
