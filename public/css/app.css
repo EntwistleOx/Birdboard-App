@@ -616,6 +616,19 @@ a {
   text-decoration: underline;
 }
 
+.button {
+  background-color: #90cdf4;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, .08);
+  font-size: 0.875rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
 .container {
   width: 100%;
 }
