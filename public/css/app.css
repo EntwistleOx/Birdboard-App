@@ -629,6 +629,13 @@ a {
   padding-right: 1.25rem;
 }
 
+.card {
+  background-color: #fff;
+  padding: 1.25rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, .08);
+}
+
 .container {
   width: 100%;
 }
@@ -5069,16 +5076,8 @@ a {
   max-width: 100%;
 }
 
-.min-h-0 {
-  min-height: 0;
-}
-
-.min-h-full {
-  min-height: 100%;
-}
-
-.min-h-screen {
-  min-height: 100vh;
+.min-h-150 {
+  min-height: 150px;
 }
 
 .min-w-0 {
@@ -11950,16 +11949,8 @@ a {
     max-width: 100%;
   }
 
-  .sm\:min-h-0 {
-    min-height: 0;
-  }
-
-  .sm\:min-h-full {
-    min-height: 100%;
-  }
-
-  .sm\:min-h-screen {
-    min-height: 100vh;
+  .sm\:min-h-150 {
+    min-height: 150px;
   }
 
   .sm\:min-w-0 {
@@ -18832,16 +18823,8 @@ a {
     max-width: 100%;
   }
 
-  .md\:min-h-0 {
-    min-height: 0;
-  }
-
-  .md\:min-h-full {
-    min-height: 100%;
-  }
-
-  .md\:min-h-screen {
-    min-height: 100vh;
+  .md\:min-h-150 {
+    min-height: 150px;
   }
 
   .md\:min-w-0 {
@@ -25714,16 +25697,8 @@ a {
     max-width: 100%;
   }
 
-  .lg\:min-h-0 {
-    min-height: 0;
-  }
-
-  .lg\:min-h-full {
-    min-height: 100%;
-  }
-
-  .lg\:min-h-screen {
-    min-height: 100vh;
+  .lg\:min-h-150 {
+    min-height: 150px;
   }
 
   .lg\:min-w-0 {
@@ -32596,16 +32571,8 @@ a {
     max-width: 100%;
   }
 
-  .xl\:min-h-0 {
-    min-height: 0;
-  }
-
-  .xl\:min-h-full {
-    min-height: 100%;
-  }
-
-  .xl\:min-h-screen {
-    min-height: 100vh;
+  .xl\:min-h-150 {
+    min-height: 150px;
   }
 
   .xl\:min-w-0 {
