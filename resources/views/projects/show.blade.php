@@ -18,14 +18,23 @@
                     <h2 class="text-lg text-gray-500 font-normal mb-3">Tasks</h2>
                     {{-- tasks --}}
                     @foreach ($project->tasks as $task)
-                        <div class="card mb-3">{{ $task->body }}</div>
+                    <div class="card mb-3">
+                        <form action="{{ $project->path() . '/tasks/' . $task->id }}" method="post">
+                            @csrf
+                            @method('PATCH')
+                            <div class="flex">
+                                    <input class="w-full {{ $task->completed ? 'text-gray-500' : ''}}" type="text" name="body" value="{{ $task->body }}">
+                                    <input type="checkbox" name="completed" onchange="this.form.submit()" {{ $task->completed ? 'checked' : ''}}>
+                            </div>
+                        </form>
+                    </div>
                     @endforeach
                     <div class="card mb-3">
-                            <form action="{{ $project->path() . '/tasks' }}" method="post">
-                                @csrf
-                                <input class="w-full" type="text" name="body" placeholder="Add a new tasks...">
-                            </form>
-                        </div>
+                        <form action="{{ $project->path() . '/tasks' }}" method="post">
+                            @csrf
+                            <input class="w-full" type="text" name="body" placeholder="Add a new tasks...">
+                        </form>
+                    </div>
                 </div>
                 <div>
                     <h2 class="text-lg text-gray-500 font-normal">General notes</h3>
