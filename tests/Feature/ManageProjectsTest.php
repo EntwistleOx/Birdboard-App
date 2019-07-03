@@ -34,19 +34,42 @@ class ManageProjectsTest extends TestCase
 
         $attributes = [
             'title' => $this->faker->sentence,
-            'description' => $this->faker->paragraph
+            'description' => $this->faker->sentence,
+            'notes' => 'General notes, lorem ipsum'
         ];
 
         $response = $this->post('/projects', $attributes);
 
         $project = Project::where($attributes)->first();
 
+        #dd($project);
+
         $response->assertRedirect($project->path());
 
         $this->assertDatabaseHas('projects', $attributes);
 
-        $this->get('/projects')->assertSee($attributes['title']);
+        #$this->get('/projects')->assertSee($attributes['title']);
+
+        $this->get($project->path())
+            ->assertSee($attributes['title'])
+            ->assertSee($attributes['description'])
+            ->assertSee($attributes['notes']);
     }
+
+    /** @test */
+    public function a_user_can_update_a_project()
+    {
+        $this->signIn();
+
+        $project = factory('App\Project')->create(['owner_id' => auth()->id()]);
+
+        $this->patch($project->path(),[
+            'notes' => 'Changed'
+        ])->assertRedirect($project->path());
+
+        $this->assertDatabaseHas('projects', ['notes' => 'Changed']);
+    }
+
 
     /** @test */
     public function a_user_can_view_their_project()
@@ -54,9 +77,10 @@ class ManageProjectsTest extends TestCase
         $this->signIn();
 
         $project = factory('App\Project')->create(['owner_id' => auth()->id()]);
+
         $this->get($project->path())
                             ->assertSee($project->title)
-                            ->assertSee(str_limit($project->description,100));
+                            ->assertSee($project->description);
     }
 
     /** @test */
@@ -65,6 +89,14 @@ class ManageProjectsTest extends TestCase
         $this->signIn();
         $project = factory('App\Project')->create();
         $this->get($project->path())->assertStatus(403);
+    }
+
+    /** @test */
+    public function a_user_cannot_update_others_project()
+    {
+        $this->signIn();
+        $project = factory('App\Project')->create();
+        $this->patch($project->path(),[])->assertStatus(403);
     }
 
     /** @test */

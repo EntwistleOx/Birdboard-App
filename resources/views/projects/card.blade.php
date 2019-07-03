@@ -5,6 +5,6 @@
                 {{ $project->title }}
             </a>
         </h3>
-        <div class="text-gray-600">{{  str_limit($project->description,100) }}</div>
+        <div class="text-gray-600">{{ $project->description }}</div>
     </div>
 
