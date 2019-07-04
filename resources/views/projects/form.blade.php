@@ -1,8 +1,6 @@
 @csrf
-
 <div class="field mb-6">
     <label class="label text-sm mb-2 block" for="title">Title</label>
-
     <div class="control">
         <input
             type="text"
