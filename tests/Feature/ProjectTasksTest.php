@@ -83,7 +83,7 @@ class ProjectTasksTest extends TestCase
         $this->assertDatabaseHas('tasks', [
             'body' => 'changed',
             'completed' => true
-            ]);
+        ]);
     }
 
     /** @test */

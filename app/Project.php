@@ -29,7 +29,7 @@ class Project extends Model
 
     public function activity()
     {
-        return $this->hasMany(Activity::class);
+        return $this->hasMany(Activity::class)->latest();
     }
 
     public function recordActivity($description)
@@ -37,3 +37,4 @@ class Project extends Model
         $this->activity()->create(compact(['description']));
     }
 }
+

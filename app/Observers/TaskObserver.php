@@ -15,7 +15,7 @@ class TaskObserver
      */
     public function created(Task $task)
     {
-        $task->project->recordActivity('created_task');
+        $task->recordActivity('created_task');
     }
 
     /**
@@ -24,12 +24,16 @@ class TaskObserver
      * @param  \App\Task  $task
      * @return void
      */
-    public function updated(Task $task)
-    {
-        if(! $task->completed) return;
-
-        $task->project->recordActivity('completed_task');
-    }
+    #public function updated(Task $task)
+    #{
+        #if(! $task->completed) return;
+        #$task->project->recordActivity('completed_task');
+        #if($task->completed){
+        #    $task->project->recordActivity('completed_task');
+        #}else{
+        #    $task->project->recordActivity('incompleted_task');
+        #}
+    #}
 
     /**
      * Handle the task "deleted" event.
@@ -39,7 +43,7 @@ class TaskObserver
      */
     public function deleted(Task $task)
     {
-        //
+        $task->recordActivity('deleted_task');
     }
 
     /**
@@ -64,11 +68,4 @@ class TaskObserver
         //
     }
 
-    protected function recordActivity($task, $type)
-    {
-        Activity::create([
-            'project_id' => $task->project->id,
-            'description' => $type
-        ]);
-    }
 }
