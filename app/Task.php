@@ -2,10 +2,13 @@
 
 namespace App;
 
+#use App\RecordsActivity;
 use Illuminate\Database\Eloquent\Model;
 
 class Task extends Model
 {
+    use RecordsActivity;
+
     protected $guarded = [];
 
     protected $touches = ['project'];
@@ -37,11 +40,14 @@ class Task extends Model
         return $this->morphMany(Activity::class, 'subject')->latest();
     }
 
-    public function recordActivity($description)
+    protected function activityChanges()
     {
-        $this->activity()->create([
-            'project_id' => $this->project_id,
-            'description' => $description
-        ]);
+        return null;
+        if($this->wasChanged()){
+            return [
+                    'before' => array_except(array_diff($this->old, $this->getAttributes()), 'updated_at'),
+                    'after' => array_except($this->getChanges(), 'updated_at')
+            ];
+        }
     }
 }
