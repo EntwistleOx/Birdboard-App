@@ -45,6 +45,16 @@ class ManageProjectsTest extends TestCase
     }
 
     /** @test */
+    public function a_user_can_see_all_projects_they_have_been_invited_to_on_their_dashboard()
+    {
+        $project = tap(ProjectFactory::create())->invite($this->signIn());
+        $this->get('/projects')
+            ->assertSee($project->title);
+
+    }
+
+
+    /** @test */
     public function a_user_can_delete_a_project()
     {
         $this->withoutExceptionHandling();
@@ -101,7 +111,6 @@ class ManageProjectsTest extends TestCase
         $this->actingAs($project->owner)
              ->patch($project->path(),$attributes);
 
-        #$this->get($project->path().'/edit')->assertStatus(200);
         $this->assertDatabaseHas('projects', $attributes);
     }
 
