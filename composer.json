@@ -1,4 +1,4 @@
-{
+ {
     "name": "laravel/laravel",
     "type": "project",
     "description": "The Laravel Framework.",
@@ -38,6 +38,9 @@
         "classmap": [
             "database/seeds",
             "database/factories"
+        ],
+        "files": [
+            "app/helpers.php"
         ]
     },
     "autoload-dev": {
