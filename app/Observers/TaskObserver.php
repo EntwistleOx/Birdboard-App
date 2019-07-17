@@ -19,23 +19,6 @@ class TaskObserver
     }
 
     /**
-     * Handle the task "updated" event.
-     *
-     * @param  \App\Task  $task
-     * @return void
-     */
-    #public function updated(Task $task)
-    #{
-        #if(! $task->completed) return;
-        #$task->project->recordActivity('completed_task');
-        #if($task->completed){
-        #    $task->project->recordActivity('completed_task');
-        #}else{
-        #    $task->project->recordActivity('incompleted_task');
-        #}
-    #}
-
-    /**
      * Handle the task "deleted" event.
      *
      * @param  \App\Task  $task

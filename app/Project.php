@@ -11,14 +11,13 @@ class Project extends Model
 
     protected $guarded = [];
 
-    public $old = [];
-
     public function path()
     {
         return "/projects/{$this->id}";
     }
 
-    public function owner() {
+    public function owner()
+    {
         return $this->belongsTo(User::class);
     }
 
@@ -37,14 +36,6 @@ class Project extends Model
         return $this->hasMany(Activity::class)->latest();
     }
 
-    protected function activityChanges()
-    {
-        if($this->wasChanged()){
-            return [
-                    'before' => array_except(array_diff($this->old, $this->getAttributes()), 'updated_at'),
-                    'after' => array_except($this->getChanges(), 'updated_at')
-            ];
-        }
-    }
+
 }
 
