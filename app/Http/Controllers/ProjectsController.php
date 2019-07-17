@@ -27,13 +27,8 @@ class ProjectsController extends Controller
 
     public function store()
     {
-        //validate
         $attributes = $attributes = $this->validateRequest();
-
-        //persist
         $project = auth()->user()->projects()->create($attributes);
-
-        //redirect
         return redirect($project->path());
     }
 
@@ -45,15 +40,16 @@ class ProjectsController extends Controller
     public function update(Project $project, Request $request)
     {
         $this->authorize('update', $project);
-        #if(auth()->user()->isNot($project->owner)){
-        #    abort(403);
-        #}
-
         $attributes = $this->validateRequest();
-
         $project->update($attributes);
-
         return redirect($project->path());
+    }
+
+    public function destroy(Project $project)
+    {
+        $this->authorize('update', $project);
+        $project->delete();
+        return redirect('/projects');
     }
 
     protected function validateRequest()
