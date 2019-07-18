@@ -617,7 +617,7 @@ a {
 }
 
 .button {
-  background-color: #90cdf4;
+  background-color: var(--button-background-color);
   color: #fff;
   text-decoration: none;
   border-radius: 0.5rem;
@@ -630,10 +630,11 @@ a {
 }
 
 .card {
-  background-color: #fff;
+  background-color: var(--card-background-color);
   padding: 1.25rem;
   border-radius: 0.5rem;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, .08);
+  color: var(--text-default-color);
 }
 
 .container {
@@ -1054,6 +1055,26 @@ a {
   background-color: #702459;
 }
 
+.bg-default {
+  background-color: var(--text-default-color);
+}
+
+.bg-page {
+  background-color: var(--page-background-color);
+}
+
+.bg-card {
+  background-color: var(--card-background-color);
+}
+
+.bg-button {
+  background-color: var(--button-background-color);
+}
+
+.bg-header {
+  background-color: var(--header-background-color);
+}
+
 .hover\:bg-transparent:hover {
   background-color: transparent;
 }
@@ -1426,6 +1447,26 @@ a {
   background-color: #702459;
 }
 
+.hover\:bg-default:hover {
+  background-color: var(--text-default-color);
+}
+
+.hover\:bg-page:hover {
+  background-color: var(--page-background-color);
+}
+
+.hover\:bg-card:hover {
+  background-color: var(--card-background-color);
+}
+
+.hover\:bg-button:hover {
+  background-color: var(--button-background-color);
+}
+
+.hover\:bg-header:hover {
+  background-color: var(--header-background-color);
+}
+
 .focus\:bg-transparent:focus {
   background-color: transparent;
 }
@@ -1796,6 +1837,26 @@ a {
 
 .focus\:bg-pink-900:focus {
   background-color: #702459;
+}
+
+.focus\:bg-default:focus {
+  background-color: var(--text-default-color);
+}
+
+.focus\:bg-page:focus {
+  background-color: var(--page-background-color);
+}
+
+.focus\:bg-card:focus {
+  background-color: var(--card-background-color);
+}
+
+.focus\:bg-button:focus {
+  background-color: var(--button-background-color);
+}
+
+.focus\:bg-header:focus {
+  background-color: var(--header-background-color);
 }
 
 .bg-bottom {
@@ -6339,6 +6400,10 @@ a {
   color: #702459;
 }
 
+.text-default {
+  color: var(--text-default-color);
+}
+
 .hover\:text-transparent:hover {
   color: transparent;
 }
@@ -6711,6 +6776,10 @@ a {
   color: #702459;
 }
 
+.hover\:text-default:hover {
+  color: var(--text-default-color);
+}
+
 .focus\:text-transparent:focus {
   color: transparent;
 }
@@ -7081,6 +7150,10 @@ a {
 
 .focus\:text-pink-900:focus {
   color: #702459;
+}
+
+.focus\:text-default:focus {
+  color: var(--text-default-color);
 }
 
 .text-xs {
@@ -7536,6 +7609,27 @@ a {
   z-index: auto;
 }
 
+.theme-light {
+  --page-background-color: #f7fafc;
+  --card-background-color: white;
+  --button-background-color: #47CDFF;
+  --header-background-color: white;
+}
+
+.theme-dark {
+  --page-background-color: #17181E;
+  --card-background-color: #1F2027;
+  --button-background-color: #5986F9;
+  --header-background-color: #1F2027;
+  --text-default-color: white;
+}
+
+/*
+theme('colors.gray.100')
+theme('colors.blue-300')
+theme('colors.white')
+*/
+
 @media (min-width: 640px) {
   .sm\:appearance-none {
     -webkit-appearance: none;
@@ -7927,6 +8021,26 @@ a {
     background-color: #702459;
   }
 
+  .sm\:bg-default {
+    background-color: var(--text-default-color);
+  }
+
+  .sm\:bg-page {
+    background-color: var(--page-background-color);
+  }
+
+  .sm\:bg-card {
+    background-color: var(--card-background-color);
+  }
+
+  .sm\:bg-button {
+    background-color: var(--button-background-color);
+  }
+
+  .sm\:bg-header {
+    background-color: var(--header-background-color);
+  }
+
   .sm\:hover\:bg-transparent:hover {
     background-color: transparent;
   }
@@ -8299,6 +8413,26 @@ a {
     background-color: #702459;
   }
 
+  .sm\:hover\:bg-default:hover {
+    background-color: var(--text-default-color);
+  }
+
+  .sm\:hover\:bg-page:hover {
+    background-color: var(--page-background-color);
+  }
+
+  .sm\:hover\:bg-card:hover {
+    background-color: var(--card-background-color);
+  }
+
+  .sm\:hover\:bg-button:hover {
+    background-color: var(--button-background-color);
+  }
+
+  .sm\:hover\:bg-header:hover {
+    background-color: var(--header-background-color);
+  }
+
   .sm\:focus\:bg-transparent:focus {
     background-color: transparent;
   }
@@ -8669,6 +8803,26 @@ a {
 
   .sm\:focus\:bg-pink-900:focus {
     background-color: #702459;
+  }
+
+  .sm\:focus\:bg-default:focus {
+    background-color: var(--text-default-color);
+  }
+
+  .sm\:focus\:bg-page:focus {
+    background-color: var(--page-background-color);
+  }
+
+  .sm\:focus\:bg-card:focus {
+    background-color: var(--card-background-color);
+  }
+
+  .sm\:focus\:bg-button:focus {
+    background-color: var(--button-background-color);
+  }
+
+  .sm\:focus\:bg-header:focus {
+    background-color: var(--header-background-color);
   }
 
   .sm\:bg-bottom {
@@ -13212,6 +13366,10 @@ a {
     color: #702459;
   }
 
+  .sm\:text-default {
+    color: var(--text-default-color);
+  }
+
   .sm\:hover\:text-transparent:hover {
     color: transparent;
   }
@@ -13584,6 +13742,10 @@ a {
     color: #702459;
   }
 
+  .sm\:hover\:text-default:hover {
+    color: var(--text-default-color);
+  }
+
   .sm\:focus\:text-transparent:focus {
     color: transparent;
   }
@@ -13954,6 +14116,10 @@ a {
 
   .sm\:focus\:text-pink-900:focus {
     color: #702459;
+  }
+
+  .sm\:focus\:text-default:focus {
+    color: var(--text-default-color);
   }
 
   .sm\:text-xs {
@@ -14801,6 +14967,26 @@ a {
     background-color: #702459;
   }
 
+  .md\:bg-default {
+    background-color: var(--text-default-color);
+  }
+
+  .md\:bg-page {
+    background-color: var(--page-background-color);
+  }
+
+  .md\:bg-card {
+    background-color: var(--card-background-color);
+  }
+
+  .md\:bg-button {
+    background-color: var(--button-background-color);
+  }
+
+  .md\:bg-header {
+    background-color: var(--header-background-color);
+  }
+
   .md\:hover\:bg-transparent:hover {
     background-color: transparent;
   }
@@ -15173,6 +15359,26 @@ a {
     background-color: #702459;
   }
 
+  .md\:hover\:bg-default:hover {
+    background-color: var(--text-default-color);
+  }
+
+  .md\:hover\:bg-page:hover {
+    background-color: var(--page-background-color);
+  }
+
+  .md\:hover\:bg-card:hover {
+    background-color: var(--card-background-color);
+  }
+
+  .md\:hover\:bg-button:hover {
+    background-color: var(--button-background-color);
+  }
+
+  .md\:hover\:bg-header:hover {
+    background-color: var(--header-background-color);
+  }
+
   .md\:focus\:bg-transparent:focus {
     background-color: transparent;
   }
@@ -15543,6 +15749,26 @@ a {
 
   .md\:focus\:bg-pink-900:focus {
     background-color: #702459;
+  }
+
+  .md\:focus\:bg-default:focus {
+    background-color: var(--text-default-color);
+  }
+
+  .md\:focus\:bg-page:focus {
+    background-color: var(--page-background-color);
+  }
+
+  .md\:focus\:bg-card:focus {
+    background-color: var(--card-background-color);
+  }
+
+  .md\:focus\:bg-button:focus {
+    background-color: var(--button-background-color);
+  }
+
+  .md\:focus\:bg-header:focus {
+    background-color: var(--header-background-color);
   }
 
   .md\:bg-bottom {
@@ -20086,6 +20312,10 @@ a {
     color: #702459;
   }
 
+  .md\:text-default {
+    color: var(--text-default-color);
+  }
+
   .md\:hover\:text-transparent:hover {
     color: transparent;
   }
@@ -20458,6 +20688,10 @@ a {
     color: #702459;
   }
 
+  .md\:hover\:text-default:hover {
+    color: var(--text-default-color);
+  }
+
   .md\:focus\:text-transparent:focus {
     color: transparent;
   }
@@ -20828,6 +21062,10 @@ a {
 
   .md\:focus\:text-pink-900:focus {
     color: #702459;
+  }
+
+  .md\:focus\:text-default:focus {
+    color: var(--text-default-color);
   }
 
   .md\:text-xs {
@@ -21675,6 +21913,26 @@ a {
     background-color: #702459;
   }
 
+  .lg\:bg-default {
+    background-color: var(--text-default-color);
+  }
+
+  .lg\:bg-page {
+    background-color: var(--page-background-color);
+  }
+
+  .lg\:bg-card {
+    background-color: var(--card-background-color);
+  }
+
+  .lg\:bg-button {
+    background-color: var(--button-background-color);
+  }
+
+  .lg\:bg-header {
+    background-color: var(--header-background-color);
+  }
+
   .lg\:hover\:bg-transparent:hover {
     background-color: transparent;
   }
@@ -22047,6 +22305,26 @@ a {
     background-color: #702459;
   }
 
+  .lg\:hover\:bg-default:hover {
+    background-color: var(--text-default-color);
+  }
+
+  .lg\:hover\:bg-page:hover {
+    background-color: var(--page-background-color);
+  }
+
+  .lg\:hover\:bg-card:hover {
+    background-color: var(--card-background-color);
+  }
+
+  .lg\:hover\:bg-button:hover {
+    background-color: var(--button-background-color);
+  }
+
+  .lg\:hover\:bg-header:hover {
+    background-color: var(--header-background-color);
+  }
+
   .lg\:focus\:bg-transparent:focus {
     background-color: transparent;
   }
@@ -22417,6 +22695,26 @@ a {
 
   .lg\:focus\:bg-pink-900:focus {
     background-color: #702459;
+  }
+
+  .lg\:focus\:bg-default:focus {
+    background-color: var(--text-default-color);
+  }
+
+  .lg\:focus\:bg-page:focus {
+    background-color: var(--page-background-color);
+  }
+
+  .lg\:focus\:bg-card:focus {
+    background-color: var(--card-background-color);
+  }
+
+  .lg\:focus\:bg-button:focus {
+    background-color: var(--button-background-color);
+  }
+
+  .lg\:focus\:bg-header:focus {
+    background-color: var(--header-background-color);
   }
 
   .lg\:bg-bottom {
@@ -26960,6 +27258,10 @@ a {
     color: #702459;
   }
 
+  .lg\:text-default {
+    color: var(--text-default-color);
+  }
+
   .lg\:hover\:text-transparent:hover {
     color: transparent;
   }
@@ -27332,6 +27634,10 @@ a {
     color: #702459;
   }
 
+  .lg\:hover\:text-default:hover {
+    color: var(--text-default-color);
+  }
+
   .lg\:focus\:text-transparent:focus {
     color: transparent;
   }
@@ -27702,6 +28008,10 @@ a {
 
   .lg\:focus\:text-pink-900:focus {
     color: #702459;
+  }
+
+  .lg\:focus\:text-default:focus {
+    color: var(--text-default-color);
   }
 
   .lg\:text-xs {
@@ -28549,6 +28859,26 @@ a {
     background-color: #702459;
   }
 
+  .xl\:bg-default {
+    background-color: var(--text-default-color);
+  }
+
+  .xl\:bg-page {
+    background-color: var(--page-background-color);
+  }
+
+  .xl\:bg-card {
+    background-color: var(--card-background-color);
+  }
+
+  .xl\:bg-button {
+    background-color: var(--button-background-color);
+  }
+
+  .xl\:bg-header {
+    background-color: var(--header-background-color);
+  }
+
   .xl\:hover\:bg-transparent:hover {
     background-color: transparent;
   }
@@ -28921,6 +29251,26 @@ a {
     background-color: #702459;
   }
 
+  .xl\:hover\:bg-default:hover {
+    background-color: var(--text-default-color);
+  }
+
+  .xl\:hover\:bg-page:hover {
+    background-color: var(--page-background-color);
+  }
+
+  .xl\:hover\:bg-card:hover {
+    background-color: var(--card-background-color);
+  }
+
+  .xl\:hover\:bg-button:hover {
+    background-color: var(--button-background-color);
+  }
+
+  .xl\:hover\:bg-header:hover {
+    background-color: var(--header-background-color);
+  }
+
   .xl\:focus\:bg-transparent:focus {
     background-color: transparent;
   }
@@ -29291,6 +29641,26 @@ a {
 
   .xl\:focus\:bg-pink-900:focus {
     background-color: #702459;
+  }
+
+  .xl\:focus\:bg-default:focus {
+    background-color: var(--text-default-color);
+  }
+
+  .xl\:focus\:bg-page:focus {
+    background-color: var(--page-background-color);
+  }
+
+  .xl\:focus\:bg-card:focus {
+    background-color: var(--card-background-color);
+  }
+
+  .xl\:focus\:bg-button:focus {
+    background-color: var(--button-background-color);
+  }
+
+  .xl\:focus\:bg-header:focus {
+    background-color: var(--header-background-color);
   }
 
   .xl\:bg-bottom {
@@ -33834,6 +34204,10 @@ a {
     color: #702459;
   }
 
+  .xl\:text-default {
+    color: var(--text-default-color);
+  }
+
   .xl\:hover\:text-transparent:hover {
     color: transparent;
   }
@@ -34206,6 +34580,10 @@ a {
     color: #702459;
   }
 
+  .xl\:hover\:text-default:hover {
+    color: var(--text-default-color);
+  }
+
   .xl\:focus\:text-transparent:focus {
     color: transparent;
   }
@@ -34576,6 +34954,10 @@ a {
 
   .xl\:focus\:text-pink-900:focus {
     color: #702459;
+  }
+
+  .xl\:focus\:text-default:focus {
+    color: var(--text-default-color);
   }
 
   .xl\:text-xs {
