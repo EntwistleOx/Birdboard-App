@@ -44,7 +44,7 @@
                     </div>
                     @endforeach
                     <div class="card mb-3">
-                        <form action="{{ $project->path() . '/tasks' }}" method="post">
+                        <form action="{{ $project->path() . '/tasks' }}" method="pos t">
                             @csrf
                             <input class="w-full bg-card" type="text" name="body" placeholder="Add a new tasks...">
                         </form>

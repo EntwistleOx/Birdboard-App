@@ -11,47 +11,36 @@
 @import '~tailwindcss/base';
 
 h1 {
-    @apply text-2xl;
+    @apply .text-2xl;
 }
 h2 {
-    @apply text-xl;
+    @apply .text-xl;
 }
 h3 {
-    @apply text-lg;
+    @apply .text-lg;
 }
 a {
-    @apply text-blue-600 underline;
+    @apply .text-blue-600 .underline;
 }
 
-.button{
-    @apply bg-button text-white no-underline rounded-lg shadow text-sm py-2 px-5;
 
+@import 'themes/light';
+@import 'themes/dark';
+
+@import 'components/button';
+@import 'components/card';
+
+body,
+button {
+    @apply .text-default;
 }
 
-.card{
-    @apply bg-card p-5 rounded-lg shadow;
-    color: var(--text-default-color);
+.section {
+    @apply .px-8
 }
 
 @import '~tailwindcss/components';
-
 @import '~tailwindcss/utilities';
-
-.theme-light {
-    --page-background-color: theme('colors.gray.100');
-    --card-background-color: white;
-    --button-background-color: #47CDFF;
-    --header-background-color: white;
-}
-
-.theme-dark {
-    --page-background-color: #17181E;
-    --card-background-color: #1F2027;
-    --button-background-color: #5986F9;
-    --header-background-color: #1F2027;
-
-    --text-default-color: white;
-}
 
 /*
 theme('colors.gray.100')
